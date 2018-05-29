@@ -26,7 +26,13 @@ for (j = 0; j < mains.length; j++) {
         
         //Manipulate
         a.setAttribute("href", var_data[current.id][i].url);
-        a.innerHTML = var_data[current.id][i].url;
+        if (var_data[current.id][i].text == null) {
+            a.innerHTML = var_data[current.id][i].url;
+        }
+        if (var_data[current.id][i].text != null) {
+            a.innerHTML = var_data[current.id][i].text;
+        }
+        
 
         //Append
         current.appendChild(a);
