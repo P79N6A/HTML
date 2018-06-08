@@ -12,6 +12,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/linklist.css">
 </head>
+<header>
+
+</header>
 
 <body>
     <!-- Top Navbar -->
@@ -19,8 +22,10 @@
         <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="index.html">Home </a>
             <a class="nav-item nav-link" href="">...</a>
-
-        </div>
+        </div>   
+        <form class="form-inline">
+            <input type="text" id="myInput" onkeyup="mySearchfilter()" placeholder="Search site..." class="form-control mr-sm-2">
+        </form>
     </nav>
 
     <div class="container-fluid">
@@ -40,11 +45,10 @@
     </div>
 
 </body>
-
-
-<!-- data -->
-<script type="text/javascript" src="js/data.js"></script>
-<!-- script -->
-<script type="text/javascript" src="js/linklist.js"></script>
-
+    <!-- data -->
+    <script type="text/javascript" src="js/data.js"></script>
+    <!-- script -->
+    <script type="text/javascript" src="js/linklist.js"></script>
+    <!-- script -->
+    <script type="text/javascript" src="js/searchfilter.js"></script>
 </html>
