@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/linklist.css">
 </head>
@@ -22,7 +23,7 @@
         <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="index.html">Home </a>
             <a class="nav-item nav-link" href="">...</a>
-        </div>   
+        </div>
         <form class="form-inline">
             <input type="text" id="myInput" onkeyup="mySearchfilter()" placeholder="Search site..." class="form-control mr-sm-2">
         </form>
@@ -32,23 +33,68 @@
         <div class="row">
             <!-- Left -->
             <div class="col-sm-4 offset-sm-1 col-md-4 offset-md-1 pt-3">
-                <div id="Next" class="main"></div>
 
-                <div id="Lokal" class="main"></div>
+                <div class="main">
+                    <h6>Next</h6>
+                    <div class="mohi-line"></div>
+                    
+                    <div id="Next" class="template">
+                        <a href="{{url}}">
+                            {{url}}
+                        </a> {{text}}
+                        </br>
+                    </div>
+                </div>
+
+                <div class="main">
+                    <h6>Lokal</h6>
+                    <div class="mohi-line"></div>
+
+                    <div id="Lokal" class="template">
+      
+                        <a href="{{url}}">
+                            {{url}}
+                        </a>
+                        </br>
+                    </div>
+                </div>
             </div>
             <!-- Right -->
             <div class="col-sm-4 offset-sm-1 col-md-4 offset-md-1 pt-3">
-                <div id="Start" class="main"></div>
-                <div id="Top 500 sites" class="main"></div>
+                <div class="main">
+                    <h6>Start</h6>
+                    <div class="mohi-line"></div>
+
+                    <div id="Start" class="template">
+                        <a href="{{url}}">
+                            {{url}}
+                        </a>{{text}}
+                        </br>
+                    </div>
+                </div>
+
+                <div class="main">
+                    <h6>Top 500 sites</h6>
+                    <div class="mohi-line"></div>
+
+                    <div id="Top 500 sites" class="template">
+                        <a href="{{url}}">
+                            {{url}}
+                        </a>
+                        </br>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
 </body>
-    <!-- data -->
-    <script type="text/javascript" src="js/data.js"></script>
-    <!-- script -->
-    <script type="text/javascript" src="js/linklist.js"></script>
-    <!-- script -->
-    <script type="text/javascript" src="js/searchfilter.js"></script>
+<!-- data -->
+<script type="text/javascript" src="js/data.js"></script>
+<!-- script -->
+<script type="text/javascript" src="js/searchfilter.js"></script>
+<!-- script -->
+<script type="text/javascript" src="js/testcode.js"></script>
+<!-- script -->
+<script type="text/javascript" src="js/dom_template.js"></script>
+
 </html>

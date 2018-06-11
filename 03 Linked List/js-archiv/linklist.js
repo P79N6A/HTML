@@ -1,4 +1,6 @@
 
+
+//Create Linked List
 (function() {
     //Var
     var mains = document.getElementsByClassName("main");
@@ -34,11 +36,13 @@
                 a.innerHTML = var_data[current.id][i].text;
             }
 
-
             //Append
             current.appendChild(a);
             current.appendChild(b);
         };
     }
 })();
+
+
+
 
