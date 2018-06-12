@@ -1,7 +1,6 @@
 ## Link List  
 This html creates a simple html page for your Hyperlinks.   
-It provides a better overview about your hyperlinks than standard bookmakrs. Additionally you will see all your links repeatedly, 
-so no more "What I don't see, I will forget it".   
+It provides a better overview about your hyperlinks than standard bookmarks. Additionally you will see all your links repeatedly and helps to prevent the effect of "When I don't see it, I will forget it".   
    
 ![](https://github.com/myhamidi/html_templates/blob/master/pics/LinkList01.PNG)
 
