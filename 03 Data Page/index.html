@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Pages</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/body.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/grid.css">
+</head>
+<header>
+
+</header>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-main">
+            <a class="nav-item active" href="index.html">Home </a>
+            <a class="nav-item" href="">...</a>
+        </div>
+        <form class="form-inline">
+            <input type="text" id="myInput" onkeyup="mySearchfilter()" placeholder="Search site...">
+        </form>
+    </nav>
+
+    <!-- Container -->
+    <div class="container seach-here">
+        <!-- Row -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-4  offset-1">
+
+                <h6>Next</h6>
+                <div class="elm-line"></div>
+                <br/>
+                <table id="Next" class="template">
+                    <tr>
+                        <td>{{url}}</td>
+                        <td>{{text}}</td>
+                        <td>Spalte</td>
+                    </tr>
+                </table>
+
+                <h6>Lokal</h6>
+                <div class="elm-line"></div>
+                <br/>
+                <table id="Lokal" class="template">
+                    <tr>
+                        <td>{{url}}</td>
+                        <td>{{text}}</td>
+                        <td>Spalte</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Column -->
+            <div class="col-4  offset-1">
+
+                <h6>Start</h6>
+                <div class="elm-line"></div>
+                <div id="Start" class="template">
+                    <a href="{{url}}">
+                        {{url}}
+                    </a>{{text}}
+                    </br>
+                </div>
+
+                <h6>Top 500 sites</h6>
+                <div class="elm-line"></div>
+                <div id="Top 500 sites" class="template">
+                    <a href="{{url}}">
+                        {{url}}
+                    </a>
+                    </br>
+                </div>
+
+            </div>  <!-- /Column -->
+        </div>      <!-- /Row -->
+    </div>          <!-- /Container -->
+</body>
+
+<!-- data -->
+<script type="text/javascript" src="js/data.js"></script>
+<!-- script -->
+<script type="text/javascript" src="js/searchfilter.js"></script>
+<!-- script -->
+<script type="text/javascript" src="js/div_templates.js"></script>
+
+</html>
