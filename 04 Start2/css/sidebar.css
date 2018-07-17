@@ -1,0 +1,60 @@
+.sidebar-1 {
+    position: fixed;
+    z-index: 1000;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+    /* border: black solid 1px; */
+}
+
+.sidebar-2 {
+  position: fixed;
+  z-index: 1000;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+  /* border: black solid 1px; */
+}
+  
+  .mohi-sidebar-item {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    float:left;
+    display:block;
+    text-align: left;
+    border-radius: 0rem;
+    margin-bottom:.1rem;
+    /* border: black solid 1px; */
+}
+
+.sidebar-1>.mohi-sidebar-item{
+  padding-left:  5%;
+  padding-right: 5%;
+  width: 100%;
+}
+
+.sidebar-2>.mohi-sidebar-item{
+  padding-left:  5%;
+  padding-right: 5%;
+  width: 90%;
+}
+  
+   a.mohi-sidebar-item.blue.mohi-active{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  a.mohi-sidebar-item.blue.mohi-active:hover{
+    background-color:#0056b3;
+  }
+  
+  a.mohi-sidebar-item{
+    color: #000;
+    background-color: #e0e4e7;
+    border-color: #e0e4e7;
+  }
+    
+  a.mohi-sidebar-item:hover{
+    background-color: #b3bac0;
+  }
+  
+  

@@ -1,0 +1,114 @@
+h2 {
+  font-size: 2em;
+  margin-bottom: 2em;
+  padding-left: 0;
+}
+
+h4 {
+  color: white;
+  background-color: #333;
+  font-size: 1.5em;
+  padding-left: 1em;
+  margin-top:2em;
+}
+
+
+h6 {
+    margin-top:2em;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    font-size:1.2rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+h6::after {
+  float:left;
+  overflow: hidden;
+  width: 99%;
+  height: 1px;
+  content: '\a0';
+  background-color:lightgrey;
+  margin-left: -1em;
+     
+}
+
+p {
+  padding-left: 1rem;
+}
+
+.elm-line {
+    float:left;
+    overflow: hidden;
+    width: 98%;
+    height: 2px;
+    content: '\a0';
+    background-color:lightgrey;    
+}
+
+body {
+    margin: 0;
+    font-family: Segoe UI, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #303030;
+    text-align: left;
+    background-color: rgb(252, 252, 252);
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+  }
+
+
+table th, table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #909090;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem ;
+  background-color: rgb(248, 248, 250); 
+  flex-direction: row;
+  margin-right: auto
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+
+  padding: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.nav-main{
+  margin-right: auto 
+}
+
+nav>form {
+  margin-left:1rem;
+
+}
+
+nav a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
