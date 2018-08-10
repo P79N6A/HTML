@@ -1,0 +1,53 @@
+.ddcl {
+  display: inline-block;
+  position: fixed;
+  
+}
+
+.ddcl .ddcl-anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding:  5px 1em 5px 1em;  /*up right  bottom left*/   
+  border: 1px solid #ccc;
+  
+}
+
+.ddcl .ddcl-anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.ddcl .ddcl-anchor:active:after {
+  right: 8px;
+  top: 21%;
+}
+
+.ddcl ul.ddcl-items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+  /* width: 10em; */
+}
+.ddcl ul.ddcl-items li {
+  list-style: none;
+  display: block;
+  background: white;
+}
+
+border {
+  border:1px black solid;
+  
+}
