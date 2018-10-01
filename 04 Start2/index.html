@@ -34,7 +34,7 @@
             <input type="hidden" name="hl" value="de">
             <button class="btn" type="submit" name="btnG" value="Google-Suche">Search</button>
         </form>
-    </nav>
+    </nav>  
 
 
     <div class="container">
@@ -50,11 +50,13 @@
                 <div class="page">
                     <h2 class="hidden">Links</h2>
                     <h4 class="h4-simple">Tiles</h4>
-                    <div id="Start" class="auto-links link-tiles content">                        
+                    <div id="Start" class="datahandler-root content">
+                         <a href="{{url}}"><img src="{{img}}" style="height:6rem;"> </a>                      
                     </div>
 
                     <h4>Text Links</h4>
-                    <div id="Nachrichten" class="auto-links link-text content">                        
+                    <div id="Nachrichten" class="datahandler-root content">  
+                            <a href="{{url}}">{{text}}</a><br/>                    
                     </div>
                 </div>
                 <div class="page">
@@ -179,5 +181,6 @@
 <script src="js/searchfilter.js"> </script>
 
 <script src="js/Data.js"></script>
+<script src="js/datahandler.js"></script>
 
 </html>

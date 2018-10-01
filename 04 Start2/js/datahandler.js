@@ -19,7 +19,7 @@
 
 
 //Parameters
-var var_data = data_example; // Link to external js object
+var var_data = data01; // Link to external js object
 var divs_root = document.getElementsByClassName("datahandler-root"); // apply to all DOMs of this class
 
 // body Event Listener
