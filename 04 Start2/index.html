@@ -15,7 +15,7 @@
 
 <body>
     <nav>
-        <!-- Navebar -->
+        <!-- Navbar -->
         <div class="nav-main">
             <a href="index.html">Home </a>
             <a href="#">My</a>
@@ -25,14 +25,14 @@
 
         <!-- Searchfilter on Page -->
         <form class="form-inline">
-            <input type="text" id="myInput" onkeyup="mySearchfilter()" placeholder="Search site...">
+            <input type="text" id="myInput" onkeyup="mySearchfilter()" placeholder="Site Search">
         </form>
 
         <!-- Google Search -->
         <form class="form-inline" action="http://www.google.de/search" formmethod="get" autocomplete="on" name="googlesearch">
             <input class="form-control mr-sm-2" type="text" name="q" placeholder="Google Search" aria-label="Search" value="">
             <input type="hidden" name="hl" value="de">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="btnG" value="Google-Suche">Search</button>
+            <button class="btn" type="submit" name="btnG" value="Google-Suche">Search</button>
         </form>
     </nav>
 
@@ -41,17 +41,29 @@
         <div class="row">
             <!-- Left Sidebar -->
             <div class="col-1 ">
-                <div class="sidebar-1"></div>
+                <div class="auto-sidebar"></div>
             </div>
 
             <!-- Pages -->
-            <main class="col-8 offset-1 seach-here">
-
+            <main class="col-10 offset-05 seach-here">
                 <!-- Page: -->
                 <div class="page">
-                    <h2>New sidebar 1</h2>
+                    <h2 class="hidden">Links</h2>
+                    <h4 class="h4-simple">Tiles</h4>
+                    <div id="Start" class="auto-links link-tiles content">                        
+                    </div>
+
+                    <h4>Text Links</h4>
+                    <div id="Nachrichten" class="auto-links link-text content">                        
+                    </div>
+                </div>
+                <div class="page">
+                    <h2>List Links</h2>
                     <h4>h4 Header</h4>
                     <h6>h6 Header</h6>
+                    
+                    <p>Text</p>
+                    <br>
                 </div>
 
                 <!-- Page: -->
@@ -63,7 +75,7 @@
 
                 <!-- Page: New sidebar-->
                 <div class="page">
-                    <h2>New sidebar 3</h2>
+                    <h2>Text</h2>
                     <h4>h4 Header</h4>
                     <h6>h6 Header</h6>
                     <p>Paragraph 1: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
@@ -162,7 +174,10 @@
 </body>
 
 <!-- JS -->
+<script src="js/body.js"></script>
 <script src="js/sidebar.js"></script>
 <script src="js/searchfilter.js"> </script>
+
+<script src="js/Data.js"></script>
 
 </html>
