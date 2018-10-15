@@ -6,8 +6,16 @@ padding-left:5%;
 /* border: black solid 1px; */
 }
 
-img.link {
-    height:180px;
+img {
+    margin: 0 0 1em 1em; /*up right  bottom left*/    
+  }
+
+ img.border {
+    border: black solid 1px;  
+  }
+
+img.mohi-img-link {
+    height:110px;
     border:solid 0px black;
     margin-top:1%;
     margin-bottom:1%;
@@ -28,7 +36,6 @@ img.link {
     text-align: center;
 }
 
-
 img.img-2 {
     flex: 0 0 22%;
     max-width: 22%;
@@ -44,12 +51,13 @@ img.img-3 {
     margin-right: 2.5%;
     display:inline-block;
     margin-bottom: -0.4em;
+    margin-bottom: -0.4em;
     /* border: black solid 1px; */
 }
 
 img.img-4 {
-    flex: 0 0 47%;
-    max-width: 47%;
+    flex: 0 0 45%;
+    max-width: 45%;
     margin-right: 2.5%;
     display:inline-block;
     margin-bottom: -0.4em;
@@ -59,6 +67,22 @@ img.img-4 {
 img.img-5 {
     flex: 0 0 60%;
     max-width: 60%;
+    margin-right: 2.5%;
+    display:inline-block;
+    margin-bottom: -0.4em;
+    /* border: black solid 1px; */
+}
+img.img-6 {
+    flex: 0 0 75%;
+    max-width: 75%;
+    margin-right: 2.5%;
+    display:inline-block;
+    margin-bottom: -0.4em;
+    /* border: black solid 1px; */
+}
+
+img.img-full {
+    max-width: 97%;
     margin-right: 2.5%;
     display:inline-block;
     margin-bottom: -0.4em;
@@ -77,6 +101,28 @@ img.img-5 {
     /* border: black solid 1px; */
 }
 
+.img-text-3  {
+    flex: 0 0 25%;
+    max-width: 25%;
+    display:inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2rem;
+    font-size: 0.9rem;
+    text-align:left;
+    /* border: black solid 1px; */
+}
+
+.img-text-2  {
+    flex: 0 0 16.6666667%;
+    max-width: 16.6666667%;
+    display:inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 2rem;
+    font-size: 0.9rem;
+    text-align:left;
+    /* border: black solid 1px; */
+}
+
 .img-text-6 {
     flex: 0 0 50%;
     max-width: 50%;
@@ -87,3 +133,15 @@ img.img-5 {
     text-align:left;
     /* border: black solid 1px; */
 }
+
+img.formula {
+    display: block;
+    margin: 1rem 0;
+    padding: 0 0 0 5rem;    
+}
+
+
+.left-4>.formula {
+    padding: 0 0 0 6rem;  
+  }
+

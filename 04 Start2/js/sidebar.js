@@ -1,9 +1,10 @@
 // ##############################################################################################################
 // #                                                                                                            #
-// # classes:                                                                                                   #
+// # html classes:                                                                                                   #
 // # "mohi-": Auto generated classes (by js), are indicated via prefix "mohi-".                                 #
 // # "page": Must be set to all Page-divs, inside the main DOM Element                                          #
-// # "sidear-1"/"sidebar-2": Must be set to the Sidebar-div                                                     #
+// # "auto-sidebar": Must be set to the Sidebar-div                                                     #
+// # "active": if a div of class "page" has also the "active class, the div is initially set active"            #
 // #                                                                                                            #
 // ##############################################################################################################
 
@@ -13,71 +14,79 @@
 
 //Parameters
 var pmSidebar_Color = "blue";
+var div_sidebar = document.getElementsByClassName("auto-sidebar")[0];
+var div_sidebar_items; // is defined in CreateLeftSidebar()
+var active_div_page = 0;
 
-//On Page Load
-var divs_main = document.getElementsByClassName("page");
-window.onload = function () {
-    divs_main[0].className = divs_main[0].className + " mohi-active";
-    ShowActiveOnly();
+// body Event Listener
+document.addEventListener("body_WindowOnLoad", sidebar_main);
+
+//On Window Load:
+function sidebar_main() {
+    Set_mohi_active();
     CreateLeftSidebar();
-}
-var sidebarDivs = document.getElementsByClassName("mohi-sidebar-item");
-for (i = 0; i < sidebarDivs.length; i++) {
-    sidebarDivs[i].addEventListener("click", sidebarClick);
+    ShowOnlyActivePage();
 }
 
-
-//Page Events: Click on Sidebar Item
+//Page Event: Click on Sidebar Item
 function sidebarClick(div_clicked) {
-    MoveActiveClass(div_clicked);
-    ShowActiveOnly();
+    Move_mohi_active(div_clicked);
+    ShowOnlyActivePage();
 }
 
 
-// ############################################################################################################
-// Used Functions
-// ############################################################################################################
+// Used Functions ##############################################################################################
 
-//Move class="mohi-active" to 1) mohi-sidebar-item clicked AND page div
-function MoveActiveClass(div_clicked) {
-    document.getElementsByClassName("mohi-sidebar-item mohi-active")[0].className = document.getElementsByClassName("mohi-sidebar-item mohi-active")[0].className.replace(/\bmohi-active\b/g, "");
-    div_clicked.currentTarget.className = div_clicked.currentTarget.className + " mohi-active";
-    document.getElementsByClassName("page mohi-active")[0].className = document.getElementsByClassName("page mohi-active")[0].className.replace(/\bmohi-active\b/g, "");
-    for (i = 0; i < divs_main.length; i++) {
-        if (divs_main[i].innerHTML.indexOf("<h2>" + div_clicked.currentTarget.innerHTML + "</h2>") !== -1) {
-            divs_main[i].className = divs_main[i].className + " mohi-active";
+function Set_mohi_active() {
+    //Init:First Page element is active (default)
+    body_clsPage[0].classList.add("mohi-active");
+    for (i = 1; i < body_clsPage.length; i++) {
+        if (body_clsPage[i].classList.contains("active"))  {
+            body_clsPage[0].classList.remove("mohi-active");
+            body_clsPage[i].classList.add("mohi-active");
+            active_div_page = i;
         }
     }
-
 }
 
-//Auto Generate Left Sidebar from all h2 Headers
+//Create sidebar items for all h2 elelmets
 function CreateLeftSidebar() {
-    var divs_h2 = document.getElementsByTagName("h2");
-    var div_sidebar = document.getElementsByClassName("sidebar-1")[0]
-    if (document.getElementsByClassName("sidebar-2").length == 1) {
-        var div_sidebar = document.getElementsByClassName("sidebar-2")[0]
-    }
-
-    //create sidebar items
-    for (i = 0; i < divs_h2.length; i++) {
+    for (i = 0; i < body_tagH2.length; i++) {
         var a = document.createElement("a");
 
         a.setAttribute("href", "#");
-        a.setAttribute("class", "mohi-sidebar-item " + pmSidebar_Color);
-        if (i == 0) { a.setAttribute("class", "mohi-sidebar-item mohi-active " + pmSidebar_Color) };
-        a.innerHTML = divs_h2[i].innerHTML;
-        a.addEventListener("click", sidebarClick);
+        a.classList.add("mohi-sidebar-item", pmSidebar_Color);
+        if (i == active_div_page) { a.classList.add("mohi-active"); };
+        a.addEventListener("click", sidebarClick);       
+        // Add two spaces at the beginning of each h2 header (will also apply to "a"-Element)
+        body_tagH2[i].innerHTML = "&nbsp&nbsp" + body_tagH2[i].innerHTML;
+        a.innerHTML = body_tagH2[i].innerHTML;
+        //append
         div_sidebar.appendChild(a);
+    }
+    div_sidebar_items = document.getElementsByClassName("mohi-sidebar-item");
+}
+
+//Move class="mohi-active" to 1) mohi-sidebar-item clicked AND page div
+function Move_mohi_active(div_clicked) {
+
+    // move "mohi-active" from active sidebar item to that one just clicked
+    document.getElementsByClassName("mohi-sidebar-item mohi-active")[0].classList.remove("mohi-active");  // div_sidebar_items.getElelemt... does not work with Chrome
+    div_clicked.currentTarget.classList.add("mohi-active");
+
+    // move "mohi-active" from active page to the targeted page
+    document.getElementsByClassName("page mohi-active")[0].classList.remove("mohi-active");
+    for (i = 0; i < body_clsPage.length; i++) {
+        if (body_clsPage[i].innerHTML.indexOf(div_clicked.currentTarget.innerHTML + "</h2>") !== -1) {  
+            body_clsPage[i].classList.add("mohi-active");
+        }
     }
 }
 
 //Hide all content except class="mohi-active" on page load
-function ShowActiveOnly() {
-
-    for (i = 0; i < divs_main.length; i++) {
-        divs_main[i].style.display = "none";
-        if (divs_main[i].classList.contains("mohi-active")) { divs_main[i].style.display = "block"; }
+function ShowOnlyActivePage() {
+    for (i = 0; i < body_clsPage.length; i++) {
+        body_clsPage[i].style.display = "none";
+        if (body_clsPage[i].classList.contains("mohi-active")) { body_clsPage[i].style.display = "block"; }
     }
-
 }
