@@ -2,8 +2,8 @@ var data01 = {
     
     "Top-500-sites":
         [
-            { "url": "https://www.Facebook.com" },
-            { "url": "Twitter.com" },
+            { "url": "https://www.Facebook.com" , "Tags": ["neu", "alt"],},
+            { "url": "Twitter.com", "Tags": ["neu"],},
             { "url": "Google.com" },
             { "url": "Youtube.com" },
             { "url": "Instagram.com" },
@@ -21,7 +21,7 @@ var data01 = {
             { "url": "Goo.gl" },
             { "url": "Vimeo.com" },
             { "url": "Flickr.com" },
-            { "url": "Microsoft.com" },
+         //   { "url": "Microsoft.com","Tags": ["neu"],},
             { "url": "Yahoo.com" },
             { "url": "Godaddy.com" },
             { "url": "Qq.com" },

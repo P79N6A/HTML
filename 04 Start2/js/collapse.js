@@ -5,15 +5,8 @@
 // ##############################################################################################################
 
 
+function collapse_main() {
 
-// Event triggered by sidebar.js on page load
-document.addEventListener("body_WindowOnLoad", collapse);
-
-
-function collapse() {
-
-    
-    
 
     // set mohi-h4-active to active content
     for (i = 1; i < body_tagH4.length; i++) {

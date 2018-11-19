@@ -8,9 +8,15 @@ var body_tagH4H6visible = [];
 
 // Wondow Load Event:v
 window.onload = function () {
-    //For external Functions: "body_WindowOnLoad"-Event
+    //<obsolete>
     var event = new CustomEvent("body_WindowOnLoad");
     document.dispatchEvent(event);
+    //</obsolete>
+
+    
+    //sidebar_main();
+    //collapse_main();
+    datahandler_main();
 
 }
 

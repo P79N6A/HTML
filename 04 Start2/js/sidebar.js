@@ -18,9 +18,6 @@ var div_sidebar = document.getElementsByClassName("auto-sidebar")[0];
 var div_sidebar_items; // is defined in CreateLeftSidebar()
 var active_div_page = 0;
 
-// body Event Listener
-document.addEventListener("body_WindowOnLoad", sidebar_main);
-
 //On Window Load:
 function sidebar_main() {
     Set_mohi_active();
