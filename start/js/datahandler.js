@@ -1,39 +1,28 @@
 // ##############################################################################################################
 // Description:
-// Applies to all DOM Elements of class="datahandler-root".
-// will iterativly put in the value of every object key of the linked js data
-//
-// for example: 
-// var daten = {"Start": ["url":"www.google"},{"url":"www.facebook"}]}
-//
 // <div id="Start" class="datahandler-root">
 //  {{url}}
 // </div>
 //
 // will output:
 // <div id="Start" class="datahandler-root">
-// www.google
-// www.facebook
+// www.google.de
+// www.facebook.de
 // </div>
 // ##############################################################################################################
 
 
-//Parameters
-var var_data = data01; // Link to external js object
+//parameters
+var var_data = Object.assign(data01); // link to external object list
 
+//on window load:
+function main_datahandler() {
+    var array_DatahandlerDivsID = getDOM_Prpperties(document.getElementsByClassName("datahandler-root"), "id");
 
-//On Window Load:
-function datahandler_main() {
-    var divs_root = document.getElementsByClassName("datahandler-root"); // apply to all DOMs of this class
-    //var var_DatahandlerRootIDs = [];
-    //var_DatahandlerRootIDs = getDOM_Prpperties(divs_root, "id");
-    var var_DatahandlerRootIDs = getDOM_Prpperties(divs_root, "id");
-    //For each div of class "datahandler-root"
-    for (j = 0; j < var_DatahandlerRootIDs.length; j++) {
-
-        var var_CurrentDataBlock = var_data[var_DatahandlerRootIDs[j]];
-        var var_template_innerHTML = document.getElementById(var_DatahandlerRootIDs[j]).innerHTML;
-        var var_template_div = document.getElementById(var_DatahandlerRootIDs[j]);
+    for (j = 0; j < array_DatahandlerDivsID.length; j++) {
+        var var_CurrentDataBlock = var_data[array_DatahandlerDivsID[j]];
+        var var_template_innerHTML = document.getElementById(array_DatahandlerDivsID[j]).innerHTML;
+        var var_template_div = document.getElementById(array_DatahandlerDivsID[j]);
         var var_template_ClassTags = getTagsfromClass(var_template_div.classList);
         var var_AllDataProperties = [];
         var var_TagMatchTRUE = true;
@@ -44,18 +33,6 @@ function datahandler_main() {
         
         //For each Data Item
         for (i = 0; i < var_CurrentDataBlock.length; i++) {
-            
-            // NEXT:
-            //-------------------------------------------------------------
-            // die beiden ausdrücke unten vergleichen und bedingtes template zu erhalten
-            // default verhalten ohne Tags: befülle template mit allen daten
-            //var a = var_CurrentDataBlock[i]["Tags"][0]  ->ok
-            //var b = var_template_ClassTags[0]v->ok
-            // 
-            //plus: Änderungen nach Initversuch nachpflegen
-
-            //var_TagMatchTRUE false when template has Tag classes (now you have to match class tag in data)
-            //true again when one Tag in data item and in template matches
             if (!(var_template_ClassTags == undefined || var_template_ClassTags.length == 0) ) {
                 var_TagMatchTRUE = false;   
                 if (var_CurrentDataBlock[i]["Tags"] != undefined) {
@@ -121,6 +98,3 @@ function IsThereEqualTag(Taglist1, Taglist2) {
     }
     return false;
 }
-
-            //var a = var_CurrentDataBlock[i]["Tags"][0]  ->ok
-            //var b = var_template_ClassTags[0]->ok

@@ -16,7 +16,7 @@ window.onload = function () {
     
     //sidebar_main();
     //collapse_main();
-    datahandler_main();
+    main_datahandler();
 
 }
 
